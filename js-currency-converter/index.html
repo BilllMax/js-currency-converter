@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin-top: 70px;
+            background: #333;
+            color: white;
+        }
+        .card-block{
+            padding: 0.5rem;
+        }
+    </style>
+    <title>Euro Converter</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="display-4 text-center mb-3">Euro Converter</h1>
+                <form>
+                    <div class="form-group">
+                        <input 
+                        id="lbsInput"
+                        type="number" 
+                        class="form-control form-control-lg" 
+                        placeholder="Enter Euros...">
+                    </div>
+                </form>
+
+                <div id="output">
+                    <div class="card bg-primary mb-2">
+                        <div class="card-block">
+                            <h4>US Dollar (USD):</h4>
+                            <div id="USDOutput"></div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-success mb-2">
+                        <div class="card-block">
+                            <h4>British Pound (GBP):</h4>
+                            <div id="GBPOutput"></div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-danger mb-2">
+                        <div class="card-block">
+                            <h4>Australian Dollar (AUD):</h4>
+                            <div id="AUDOutput"></div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-warning mb-2">
+                        <div class="card-block">
+                            <h4>Japanese Yen (JPY):</h4>
+                            <div id="JPYOutput"></div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-info mb-2">
+                        <div class="card-block">
+                            <h4>Polish Złoty (PLN):</h4>
+                            <div id="PLNOutput"></div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-primary mb-2">
+                        <div class="card-block">
+                            <h4>Russian Rubel (RUB):</h4>
+                            <div id="RUBOutput"></div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-success mb-2">
+                        <div class="card-block">
+                            <h4>Thai Baht (THB):</h4>
+                            <div id="THBOutput"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+
+    document.getElementById('output').style.visibility = 'hidden';
+
+    document.getElementById('lbsInput').addEventListener('input', function(e){
+        document.getElementById('output').style.visibility = 'visible';
+        let eur = e.target.value;
+        document.getElementById('USDOutput').innerHTML = eur*1.19;
+        document.getElementById('GBPOutput').innerHTML = eur*0.86;
+        document.getElementById('AUDOutput').innerHTML = eur*1.54;
+        document.getElementById('JPYOutput').innerHTML = eur*129.82;
+        document.getElementById('PLNOutput').innerHTML = eur*4.62;
+        document.getElementById('RUBOutput').innerHTML = eur*88.6;
+        document.getElementById('THBOutput').innerHTML = eur*36.8;
+    });
+</script>
+
+</body>
+</html>
